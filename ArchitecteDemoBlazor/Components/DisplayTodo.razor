@@ -1,0 +1,13 @@
+﻿<tr>
+    <td>@Entity.Id</td>
+    <td>@Entity.Title</td>
+    <td>@Entity.Done</td>
+    @if (!Entity.Done)
+    {
+        <td><button @onclick="Cloture">Cloture</button></td>
+    }
+    else
+    {
+        <td></td>
+    }
+</tr>

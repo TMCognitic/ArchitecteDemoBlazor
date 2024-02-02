@@ -1,0 +1,41 @@
+﻿@page "/"
+
+<PageTitle>Liste des tâches</PageTitle>
+
+<h3>Home</h3>
+@if (Items is null)
+{
+    @if (ErrorMessage is null)
+    {
+        <p>Loading...</p>
+    }
+    else
+    {
+        <div class="text-danger">
+            @ErrorMessage
+        </div>
+    }
+}
+else
+{
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Done</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Todo todo in Items)
+                {
+                    <DisplayTodo Entity="todo" TodoClotured="ClotureToDo" />
+                }
+            </tbody>
+        </table>
+
+        <div class="test"></div>
+    </div>
+}

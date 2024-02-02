@@ -1,0 +1,19 @@
+﻿@page "/todo/create"
+
+<PageTitle>Creer une tâche</PageTitle>
+
+<div class="row">
+    <div class="col-md-4 mx-auto">
+        <EditForm Model="Form" OnValidSubmit="Save">
+            <DataAnnotationsValidator />
+            <div class="form-group">
+                <label id="Title" class="control-label">Titre : </label>
+                <InputText id="Title" @bind-Value="Form.Title" class="form-control" />
+                <ValidationMessage For="() => Form.Title" />
+            </div>           
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Create</button>
+            </div>
+        </EditForm>
+    </div>
+</div>
